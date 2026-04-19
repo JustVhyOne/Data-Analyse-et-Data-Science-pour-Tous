@@ -1,0 +1,246 @@
+# ==============================================
+# mkdocs.yml - Configuration Expert
+# Site : Data Analyse et Data Science pour tous avec Python
+# ==============================================
+
+# -------------------- INFOS GÉNÉRALES --------------------
+site_name: Data & Science Pour Tous
+site_description: "Apprenez la Data Science avec Python, sans dépenser un centime. Outils pro, résultats pro."
+site_author: "Justicier VIHYA"
+site_url: https://CodeWith-justVhy.com
+copyright: "© 2025 - Open Source • Zéro Abonnement"
+
+# -------------------- DÉPÔT GITHUB (Optionnel) --------------------
+repo_name: "JustVhyOne/Data-Analyse-and-Data-Science-pour-Tous"
+repo_url: https://github.com/JustVhyOne/Data-Analyse-and-Data-Science-pour-Tous
+edit_uri: edit/main/docs/
+
+# -------------------- NAVIGATION PRINCIPALE --------------------
+nav:
+  # 🏠 ACCUEIL
+  - Accueil: index.md
+
+  # 💸 PARTIE 1
+  - "💸 Partie 1 : La Révolution du Gratuit":
+      - Introduction: partie-1-revolution-gratuit/index.md
+      - Stop aux abonnements Excel/VBA: partie-1-revolution-gratuit/stop-abonnements.md
+      - La Puissance de l'Open Source: partie-1-revolution-gratuit/puissance-open-source.md
+      - Tout gérer, partout: partie-1-revolution-gratuit/tout-gerer-partout.md
+
+  # 🐍 PARTIE 2
+  - "🐍 Partie 2 : Les Fondations":
+      - Introduction: partie-2-fondations/index.md
+      - Python sans la corvée: partie-2-fondations/python-sans-corvee.md
+      - Pandas, le vrai remplaçant d'Excel: partie-2-fondations/pandas-excel-killer.md
+
+  # 📊 PARTIE 3
+  - "📊 Partie 3 : La Visualisation":
+      - Introduction: partie-3-visualisation/index.md
+      - Graphiques Pro avec Seaborn: partie-3-visualisation/seaborn-graphique-pro.md
+      - Interactivité & Animations avec Plotly: partie-3-visualisation/plotly-interactivite.md
+
+  # 🧠 PARTIE 4
+  - "🧠 Partie 4 : Data Science Accessible":
+      - Introduction: partie-4-data-science/index.md
+      - Machine Learning expliqué simplement: partie-4-data-science/ml-explique-simplement.md
+      - Votre première prédiction: partie-4-data-science/premiere-prediction.md
+
+  # 🛠 PARTIE 5
+  - "🛠 Partie 5 : Survivre dans le Monde Réel":
+      - Introduction: partie-5-outils/index.md
+      - L'Environnement Virtuel: partie-5-outils/environnement-virtuel.md
+      - Git & GitHub Gratuit: partie-5-outils/git-github.md
+
+# -------------------- THÈME MATERIAL (CONFIG AVANCÉE) --------------------
+theme:
+  name: material
+#  custom_dir: docs/overrides          # Pour surcharger des templates si besoin
+  language: fr
+  logo: assets/images/logo.svg        # À créer
+  favicon: assets/images/favicon.ico
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+
+  # Palette de couleurs "Néon / Synthwave Chic"
+  palette:
+    # Mode Sombre (Recommandé pour le style "Data Science")
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple            # Fond sombre élégant
+      accent: cyan                    # Accents néon (liens, boutons)
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en mode clair
+    # Mode Clair (Alternative)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/weather-night
+        name: Passer en mode sombre
+
+  features:
+    # Navigation
+    #- navigation.instant              # Chargement instantané (SPA)
+    #- navigation.instant.progress     # Barre de progression lors du chargement
+    - navigation.tracking             # Mise à jour de l'URL
+    - navigation.tabs                 # Navigation en onglets (en haut)
+    - navigation.tabs.sticky          # Onglets collés en haut
+    - navigation.sections             # Sections dans la sidebar
+    - navigation.expand               # Déplier la sidebar par défaut
+    - navigation.indexes              # Utiliser index.md comme page de section
+    - navigation.top                  # Bouton "Retour en haut"
+    - navigation.footer               # Footer avec liens Précédent/Suivant
+
+    # Recherche
+    - search.suggest                  # Suggestions de recherche
+    - search.highlight                # Surlignage des termes recherchés
+    - search.share                    # Partage de recherche
+
+    # Contenu & Style
+    - content.code.annotate           # Annotations dans les blocs de code
+    - content.code.copy               # Bouton Copier
+    - content.tooltips                # Infobulles (survol d'abbréviations)
+    - content.tabs.link               # Onglets synchronisés
+
+    # Esthétique avancée
+    - announce.dismiss                # Bannière d'annonce dismissible
+    - header.autohide                 # Cache le header au scroll
+    - toc.follow                      # Table des matières suit le scroll
+    - toc.integrate                   # Intégration fluide de la TOC
+
+# -------------------- EXTENSIONS MARKDOWN --------------------
+markdown_extensions:
+  # Python Markdown
+  - admonition            # Blocs "Note", "Attention", etc.
+  - attr_list             # Attributs HTML dans le markdown
+  - md_in_html            # Markdown dans du HTML
+  - pymdownx.details      # Blocs repliables
+  #- pymdownx.superfences  # Imbrication de blocs de code
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets      # Inclure des fichiers externes
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.critic        # Mode révision (souligné, barré)
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  # Pour les formules mathématiques (optionnel)
+  - pymdownx.arithmatex:
+      generic: true
+
+  # Pour les diagrammes Mermaid (optionnel)
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+# -------------------- PLUGINS (INDISPENSABLES POUR LE STYLE AVANCÉ) --------------------
+plugins:
+  # Recherche optimisée
+  - search:
+      lang: fr
+
+  # Affichage des dernières modifications Git
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
+      fallback_to_build_date: true
+
+  # Génération automatique de miniatures pour les réseaux sociaux
+  - social:
+      cards_layout_options:
+        background_color: "#0D1117"  # Fond sombre
+        color: "#00E5FF"             # Texte cyan
+
+  # Minification HTML pour la performance
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
+
+  # Pour inclure des notebooks Jupyter directement (optionnel mais puissant)
+  #- mkdocs-jupyter:
+  #    execute: false
+  #    include_source: true
+  #    theme: dark
+  #    include_requirejs: true
+
+  # Gestion des redirections (si vous changez des URLs plus tard)
+  - redirects:
+      redirect_maps:
+        # Exemple : 'ancienne-page.md': 'nouvelle-destination.md'
+
+  # Blog (optionnel, pour une section actualités)
+  # - blog:
+  #     blog_dir: blog
+  #     post_dir: "{blog}/posts"
+  #     archive: true
+
+# -------------------- CSS & JS PERSONNALISÉS (ANIMATIONS, GLOW, ETC.) --------------------
+extra_css:
+  - stylesheets/extra.css              # Vos animations CSS personnalisées
+  - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css
+
+extra_javascript:
+  - https://cdn.plot.ly/plotly-latest.min.js
+
+
+# -------------------- CONFIGURATIONS SUPPLÉMENTAIRES --------------------
+extra:
+  # Configuration des réseaux sociaux
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/JustVhyOne
+      name: JustVhyOne
+    - icon: fontawesome/solid/envelope
+      link: mailto:justVhy@proton.me
+      name: justVhy@proton.me
+
+  # Consentement aux cookies (optionnel)
+  consent:
+    title: Cookies et vie privée
+    description: >
+      Nous utilisons des cookies pour analyser le trafic et améliorer votre expérience.
+      Aucune donnée personnelle n'est collectée sans votre accord.
+    actions:
+      - accept
+      - reject
+      - manage
+
+  # Générateur de balises meta
+  generator: false
+
+  # Analytics (optionnel)
+  #analytics:
+    #provider: google
+    #property: G-XXXXXXXXXX
+    #feedback:
+    #  title: Cette page vous a-t-elle été utile ?
+    #  ratings:
+    #    - icon: material/emoticon-happy-outline
+    #      name: Bonne
+    #      data: good
+    #      note: >-
+    #        Merci pour votre retour !
+    #    - icon: material/emoticon-sad-outline
+    #      name: Mauvaise
+    #      data: bad
+    #      note: >-
+    #        Désolé d'apprendre cela. <a href="..." target="_blank" rel="noopener">
+    #        Dites-nous comment nous améliorer</a>.

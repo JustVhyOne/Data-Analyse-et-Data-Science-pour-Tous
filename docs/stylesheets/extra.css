@@ -1,0 +1,89 @@
+/* docs/stylesheets/extra.css */
+
+/* Animation d'apparition progressive au scroll */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.md-typeset h1, 
+.md-typeset h2,
+.md-main__inner {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Effet Glow néon sur les titres */
+.md-typeset h1 {
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.7);
+    border-left: 4px solid #00e5ff;
+    padding-left: 20px;
+}
+
+/* Blocs de code avec curseur clignotant */
+.md-typeset pre > code {
+    border-left: 3px solid #ff007f;
+}
+
+.md-typeset pre::before {
+    content: ">";
+    color: #00e5ff;
+    font-weight: bold;
+    margin-right: 8px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Survol des cartes dans la grille (domaines d'application) */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.grid-card {
+    background: rgba(30, 30, 40, 0.7);
+    backdrop-filter: blur(5px);
+    border: 1px solid #2a2a3c;
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-align: center;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.grid-card:hover {
+    transform: translateY(-8px);
+    border-color: #00e5ff;
+    box-shadow: 0 12px 24px rgba(0, 229, 255, 0.2);
+}
+
+/* Bouton "Télécharger Notebook" personnalisé */
+.download-notebook {
+    display: inline-block;
+    background: linear-gradient(145deg, #1e1e2e, #13131f);
+    border: 1px solid #00e5ff;
+    color: #00e5ff !important;
+    padding: 10px 24px;
+    border-radius: 40px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: 0.2s;
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+.download-notebook:hover {
+    background: #00e5ff;
+    color: #0a0a12 !important;
+    box-shadow: 0 0 20px #00e5ff;
+}
