@@ -1,0 +1,12 @@
+<!-- Surcharge partielle pour ajouter un bouton -->
+{% extends "partials/header.html" %}
+
+{% block header %}
+  {{ super() }}
+  <div class="md-header__source">
+    <a href="/assets/notebooks/all-notebooks.zip" class="md-source" download>
+      <span class="twemoji">📦</span>
+      <span class="md-source__repository">Tous les notebooks</span>
+    </a>
+  </div>
+{% endblock %}
