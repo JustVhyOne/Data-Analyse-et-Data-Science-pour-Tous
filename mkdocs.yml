@@ -57,7 +57,7 @@ theme:
 #  custom_dir: docs/overrides          # Pour surcharger des templates si besoin
   language: fr
   logo: assets/images/logo.svg        # À créer
-  favicon: assets/images/favicon.ico
+  favicon: assets/images/logo.ico
   icon:
     repo: fontawesome/brands/github
     edit: material/pencil
